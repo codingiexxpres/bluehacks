@@ -77,15 +77,6 @@ local Slider = Tab:CreateSlider({
     end,
  })
 
- local Label = Tab:CreateLabel("made by anti_cheat95", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 
 
-local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
-
-local Button = Tab:CreateButton({
-   Name = "say hi in devconsole",
-   Callback = function(print("hi")
-   -- The function that takes place when the button is pressed
-   end,
-})
