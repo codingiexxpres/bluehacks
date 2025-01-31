@@ -78,7 +78,7 @@ local Slider = Tab:CreateSlider({
  })
 
  local Label = Tab:CreateLabel("made by anti_cheat95", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
-end
+
 
 
 local Tab = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
