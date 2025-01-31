@@ -3,8 +3,8 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
     Name = "bluehacks",
     Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-    LoadingTitle = "bluehacks",
-    LoadingSubtitle = "by anti_cheat95",
+    LoadingTitle = "MADE BY MORENO",
+    LoadingSubtitle = "ROBLOX HACKS",
     Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
  
     DisableRayfieldPrompts = false,
@@ -65,4 +65,5 @@ local Slider = Tab:CreateSlider({
     -- The variable (Value) is a number which correlates to the value the slider is currently at
     end,
  })
+
 
