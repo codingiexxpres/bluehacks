@@ -75,7 +75,6 @@ local Slider = Tab:CreateSlider({
     Callback = function(Keybind)
     -- The function that takes place when the keybind is pressed
     -- The variable (Keybind) is a boolean for whether the keybind is being held or not (HoldToInteract needs to be true)
-    end,
  })
 
 local Button = MainTab:CreateButton({
