@@ -54,13 +54,14 @@ local Window = Rayfield:CreateWindow({
 })
 
 local Slider = Tab:CreateSlider({
-    Name = "aimbot",
+    Name = "walk speed",
     Range = {0, 100},
     Increment = 10,
     Suffix = "aimbot",
     CurrentValue = 10,
     Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
+    Callback = function(s)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
     -- The function that takes place when the slider changes
     -- The variable (Value) is a number which correlates to the value the slider is currently at
     end,
