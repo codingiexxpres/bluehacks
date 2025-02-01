@@ -1,5 +1,3 @@
-
-
 task.spawn(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/TheRealAsu/BABFT/refs/heads/main/MessageIssue.lua'))()
 end)
