@@ -211,7 +211,7 @@ local qzdqzd = Global:CreateDivider()
 
 Section = Credit:CreateSection("Owner")
 
-local Labeld = Credit:CreateLabel("Owner: @thereal_asu", 93981953300699, Color3.fromRGB(255, 255, 255), true)
+local Labeld = Credit:CreateLabel("Owner: @thedarkv2", 93981953300699, Color3.fromRGB(255, 255, 255), true)
 
 local Paragraph = Credit:CreateParagraph({Title = "About this script", Content = "This script is one of my projects that I'm taking time to make, I'm leaving it open source to allow people to check if this script is trusted, but also to let people learn the different techniques used in this script to do specific things. Please don't be a bad “skid” and credit me if you use this script to create your own script. It's ok to copy and paste my work for your script or improve my script to your own style, to suggest different versions of it, but please respect me, respect my work and have fun."})
 
