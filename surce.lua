@@ -85,15 +85,15 @@ local Window = Rayfield:CreateWindow({
        RememberJoins = true
     },
  
-    KeySystem = false,
+    KeySystem = true,
     KeySettings = {
-       Title = "NOW KEY LESS JUST PASTE IN THE KEY 2000 only 1 time key ",
+       Title = "BLUEX KEY",
        Subtitle = "Key System",
-       Note = "KEY SYSTEM V1",
+       Note = "GET KEY FORM WEBSITE https://lootdest.org/s?ODaQmDgQ",
        FileName = "KeyFORscript-a-TEMP",
        SaveKey = true,
        GrabKeyFromSite = false,
-       Key = {"2000"} -- yes there is a keysystem but my script is not obfuscated lol
+       Key = {""} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
