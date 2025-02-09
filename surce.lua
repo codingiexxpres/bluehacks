@@ -90,10 +90,10 @@ local Window = Rayfield:CreateWindow({
        Title = "BLUEX KEY",
        Subtitle = "Key System",
        Note = "GET KEY FORM WEBSITE https://lootdest.org/s?ODaQmDgQ",
-       FileName = "KeyFORscript-a-TEMP",
-       SaveKey = true,
+       FileName = "idontgiveafuckinthis",
+       SaveKey = FALSE,
        GrabKeyFromSite = false,
-       Key = {""} -- yes there is a keysystem but my script is not obfuscated lol
+       Key = {"KEY_32338NF83NDF83HF83GF83BW0DSJK4B_BLUEX"} -- yes there is a keysystem but my script is not obfuscated lol
     }
 })
 
